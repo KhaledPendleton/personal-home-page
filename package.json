@@ -3,7 +3,9 @@
 	"version": "1.0.0",
 	"description": "My personal website",
 	"main": ".eleventy.js",
-	"scripts": {},
+	"scripts": {
+		"start": "npx eleventy --serve"
+	},
 	"author": {
 		"name": "Khaled Pendleton",
 		"url": "https://khaledpendleton.com"
