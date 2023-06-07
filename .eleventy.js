@@ -30,23 +30,24 @@ module.exports = eleventyConfig => {
     eleventyConfig.addExtension('scss', {
         outputFileExtension: 'css',
         compileOptions: { permalink: generateSassOutputPermalink },
-        compile: function (inputContent) {
-            const css = sassCompiler.compile(inputContent);
+        compile: function (inputContent, inputPath) {
+            const {css, loadedUrls} = sassCompiler.compile(inputContent);
+            this.addDependencies(inputPath, loadedUrls); // TODO: Link to docs
             return async _data => css;
         }
     });
 
     // COMPILE JAVASCRIPT
-    const jsCompiler = JsCompiler();
+    const jsCompiler = JsCompiler({metafile: true});
 
     eleventyConfig.addTemplateFormats('js');
     eleventyConfig.addExtension('js', {
         outputFileExtension: 'js',
         compileOptions: { permalink: generateJsOutputPermalink },
         compile: async function (_inputContent, inputPath) {
-            const bundle = await jsCompiler.compile(inputPath);
-            const outputFile = bundle.outputFiles[0];
-            return async _data => outputFile.text;
+            const {metafile, outputFiles} = await jsCompiler.compile(inputPath);
+            this.addDependencies(inputPath, Object.keys(metafile.inputs));
+            return async _data => outputFiles[0].text;
         } 
     });
 

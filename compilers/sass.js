@@ -4,7 +4,7 @@ module.exports = function SassCompiler(options = {}) {
     return {
         compile: fileContents => {
             const result = sass.compileString(fileContents, options);
-            return result.css;
+            return result;
         }
     }
 }
