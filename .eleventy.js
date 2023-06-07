@@ -22,7 +22,7 @@ const generateJsOutputPermalink = (_contents, inputPath) => {
 module.exports = eleventyConfig => {
     // COMPILE SASS
     const sassCompiler = SassCompiler({
-        loadPaths: ['/assets/scss'],
+        loadPaths: ['./src/assets/scss'],
         style: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded'
     });
 
