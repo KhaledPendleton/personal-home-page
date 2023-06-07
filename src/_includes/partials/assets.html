@@ -1,0 +1,18 @@
+{# TODO: Explore inlining #}
+<link rel="stylesheet" href="assets/css/main.css?{{ assetHash }}">
+
+{# Add facility for pages to delare an array of critical styles #}
+{% if pageCriticalStyles %}
+    {% for item in pageCriticalStyles %}
+        <link rel="stylesheet" href="assets/css/{{ item }}?{{ assetHash }}" />
+    {% endfor %}
+{% endif %}
+
+<script src="assets/js/index.js?{{ assetHash }}"></script>
+
+{# Add facility for pages to delare an array of critical scripts #}
+{% if pageCriticalScripts %}
+    {% for item in pageCriticalScripts %}
+        <script src="assets/js/{{ item }}?{{ assetHash }}"></script>
+    {% endfor %}
+{% endif %}
