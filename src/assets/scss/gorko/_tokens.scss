@@ -1,0 +1,43 @@
+// COLORS
+$gorko-colors: (
+    'light': hsl(39, 27%, 79%),
+    'teal': hsl(107, 6%, 54%),
+    'cool': hsl(0, 0%, 34%),
+    'cool-glare': hsl(334, 7%, 45%),
+    'cool-shade': hsl(285, 10%, 8%),
+    'warm': hsl(29, 31%, 50%),
+    'warm-glare': hsl(46, 59%, 81%),
+    'warm-shade': hsl(15, 38%, 48%),
+);
+
+$light-colors: (
+    'text': map-get($map: $gorko-colors, $key: 'cool-shade'),
+    'text-highlight': map-get($map: $gorko-colors, $key: 'warm-glare'),
+    'bg': map-get($map: $gorko-colors, $key: 'light'),
+    'bg-highlight': map-get($map: $gorko-colors, $key: 'warm-shade'),
+    'link': map-get($map: $gorko-colors, $key: 'warm-shade'),
+    'link-hover': map-get($map: $gorko-colors, $key: 'teal'),
+    'link-active': map-get($map: $gorko-colors, $key: 'cool'),
+    'link-visited': map-get($map: $gorko-colors, $key: 'cool-shade'),
+    'btn': map-get($map: $gorko-colors, $key: 'warm-shade')
+);
+
+// Not all entries necessary as these colors will override $light-colors
+$dark-colors: (
+    'text': map-get($map: $gorko-colors, $key: 'light'),
+    'text-highlight': map-get($map: $gorko-colors, $key: 'cool-shade'),
+    'bg': map-get($map: $gorko-colors, $key: 'cool-shade'),
+    'bg-highlight': map-get($map: $gorko-colors, $key: 'cool-glare'),
+    'link': map-get($map: $gorko-colors, $key: 'warm-shade'),
+    'link-hover': map-get($map: $gorko-colors, $key: 'warm-glare'),
+    'link-active': map-get($map: $gorko-colors, $key: 'teal'),
+    'link-visited': map-get($map: $gorko-colors, $key: 'light'),
+);
+
+// BREAKPOINTS
+$breakpoints: (
+    'sm': '(max-width: 48rem)',
+    'md': '(min-width: 48rem)', // 768px
+    'lg': '(min-width: 64rem)', // 1024px
+    'xl': '(min-width: 75rem)'  // 1200px
+);
