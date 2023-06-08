@@ -1,13 +1,13 @@
 // COLORS
 $gorko-colors: (
-    'light': hsl(39, 27%, 79%),
-    'teal': hsl(107, 6%, 54%),
-    'cool': hsl(0, 0%, 34%),
-    'cool-glare': hsl(334, 7%, 45%),
-    'cool-shade': hsl(285, 10%, 8%),
-    'warm': hsl(29, 31%, 50%),
-    'warm-glare': hsl(46, 59%, 81%),
-    'warm-shade': hsl(15, 38%, 48%),
+    'light': hsla(39, 27%, 79%, 0.99),
+    'teal': hsla(107, 6%, 54%, 0.99),
+    'cool': hsla(0, 0%, 34%, 0.99),
+    'cool-glare': hsla(334, 7%, 45%, 0.99),
+    'cool-shade': hsla(285, 10%, 8%, 0.99),
+    'warm': hsla(29, 31%, 50%, 0.99),
+    'warm-glare': hsla(46, 59%, 81%, 0.99),
+    'warm-shade': hsla(15, 38%, 48%, 0.99),
 );
 
 $light-colors: (
