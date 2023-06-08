@@ -1,0 +1,56 @@
+@use 'gorko';
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+::selection {
+    background-color: var(--color-bg-highlight);
+    color: var(--color-text-highlight);
+}
+
+// Anchors with no classes. Primarily links generated from markdown
+a:not([class]) {
+    text-decoration: none;
+    color: var(--color-link);
+    border-bottom: 1.5px solid var(--color-link);
+
+    &:visited {
+        border-bottom-color: var(--color-link-visited);
+        color: var(--color-link-visited);
+    }
+
+    &:focus,
+    &:hover {
+        color: var(--color-link-hover);
+        border-bottom-color: var(--color-link-hover);
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:active {
+        color: var(--color-link-active);
+        border-bottom-color: var(--color-link-active);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: gorko.get-utility-value('font', 'normal');
+    max-width: 30ch;
+}
+
+main:focus {
+    outline: none;
+}
+
+p {
+    max-width: 80ch;
+}
