@@ -1,0 +1,44 @@
+@use 'gorko/tokens';
+
+@forward '../../../node_modules/gorko/gorko.scss' with (
+    $gorko-colors: tokens.$gorko-colors,
+    $gorko-config: (
+        // SCREEN BREAKPOINTS
+        'breakpoints': tokens.$breakpoints,
+
+        // COLOR THEMES
+        'css-vars': (
+            'themes': (
+                'default': (
+                    'tokens': (
+                        'color': tokens.$light-colors
+                    )
+                ),
+                'dark': (
+                    'prefers-color-scheme': 'dark',
+                    'tokens': (
+                        'color': tokens.$dark-colors
+                    )
+                ),
+                'dark-toggle': (
+                    'prefix': '[data-theme="dark"]',
+                    'tokens': (
+                        'color': tokens.$dark-colors
+                    )
+                )
+            )
+        ),
+
+        // TEXT
+        'font': (
+            'items': (
+                'thin': '100',
+                'normal': '400',
+                'bold': '700',
+                'black': '900'
+            ),
+            'output': 'standard',
+            'property': 'font-weight'
+        )
+    )
+);
