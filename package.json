@@ -10,7 +10,6 @@
 		"name": "Khaled Pendleton",
 		"url": "https://khaledpendleton.com"
 	},
-	"license": "ISC",
 	"devDependencies": {
 		"@11ty/eleventy": "^2.0.1",
 		"esbuild": "^0.17.19",
