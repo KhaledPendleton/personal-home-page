@@ -10,8 +10,7 @@ body {
     color: var(--color-text-highlight);
 }
 
-// Anchors with no classes. Primarily links generated from markdown
-a:not([class]) {
+a {
     text-decoration: none;
     color: var(--color-link);
     border-bottom: 1.5px solid var(--color-link);
