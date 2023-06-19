@@ -1,0 +1,17 @@
+{% extends "layouts/base.html" %}
+
+{% set projectUpdatesMarkup %}
+    {% set projectUpdatesList = helpers.updatesForProject(collections['project-updates'], key) %}
+
+    {% if projectUpdatesList | length %}
+        {% include "partials/lists/project-item-updates-list.html" %}
+    {% else %}
+        <p>There are no updates at this time. Subscribe maybe</p>
+    {% endif %}
+{% endset %}
+
+{% block content %}
+    {{ content | safe }}
+
+    {{ projectUpdatesMarkup | safe }}
+{% endblock %}
