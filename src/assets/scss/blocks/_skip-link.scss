@@ -1,0 +1,15 @@
+@use 'utilities';
+@use 'utilities/visually-hidden';
+
+.skip-link {
+    position: absolute;
+    z-index: 99;
+
+    // TODO: Replace with composition space
+    top: 1rem;
+    left: 1rem;
+
+    &:not(:focus) {
+        @extend .visually-hidden;
+    }
+}
