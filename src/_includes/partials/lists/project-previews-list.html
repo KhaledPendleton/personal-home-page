@@ -1,0 +1,23 @@
+<ul>
+    {% for project in projectsList %}
+        {% set projectUpdatesMarkup %}
+            {% set projectUpdatesList = helpers.updatesForProject(collections['project-updates'], project.data.key) %}
+
+            {% if projectUpdatesList | length %}
+                <ol>
+                    {% for update in projectUpdatesList %}
+                        <!-- {# include "partials/lists/project-preview-update.html" #} -->
+                        <li><a href="{{ project.url }}#{{ update.data.title | slugify }}">{{ update.data.date }} {{ update.data.title }}</a></li>
+                    {% endfor %}
+                </ol>
+            {% endif %}
+        {% endset %}
+
+        <li>
+            <h3>{{ project.data.title }}</h3>
+            <p>{{ project.data.previewText }}</p>
+
+            {{ projectUpdatesMarkup | safe }}
+        </li>
+    {% endfor %}
+</ul>
