@@ -20,6 +20,14 @@ const generateJsOutputPermalink = (_contents, inputPath) => {
 }
 
 module.exports = eleventyConfig => {
+    eleventyConfig.addCollection('projects', (collection) => {
+        return collection.getFilteredByGlob('./src/projects/*.md');
+    });
+
+    eleventyConfig.addCollection('project-updates', (collection) => {
+        return collection.getFilteredByGlob('./src/projects/updates/*.md')
+    });
+
     // COMPILE SASS
     const sassCompiler = SassCompiler({
         loadPaths: ['./src/assets/scss'],
