@@ -1,35 +1,36 @@
-@use 'gorko/tokens';
+@use 'composition';
 
+// Pull in Gorko
 @forward '../../../node_modules/gorko/gorko.scss' with (
-    $gorko-colors: tokens.$gorko-colors,
+    $gorko-colors: composition.$gorko-colors,
     $gorko-config: (
         // SCREEN BREAKPOINTS
-        'breakpoints': tokens.$breakpoints,
+        'breakpoints': composition.$breakpoints,
 
         // COLOR THEMES
         'css-vars': (
             'themes': (
                 'default': (
                     'tokens': (
-                        'color': tokens.$light-colors
+                        'color': composition.$light-colors
                     )
                 ),
                 'dark': (
                     'prefers-color-scheme': 'dark',
                     'tokens': (
-                        'color': tokens.$dark-colors
+                        'color': composition.$dark-colors
                     )
                 ),
                 'dark-toggle': (
                     'prefix': '[data-theme="dark"]',
                     'tokens': (
-                        'color': tokens.$dark-colors
+                        'color': composition.$dark-colors
                     )
                 ),
                 'light-toggle': (
                     'prefix': '[data-theme="light"]',
                     'tokens': (
-                        'color': tokens.$light-colors
+                        'color': composition.$light-colors
                     )
                 )
             )

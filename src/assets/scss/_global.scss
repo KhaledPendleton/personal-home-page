@@ -1,4 +1,4 @@
-@use 'gorko';
+@use 'utilities';
 
 body {
     background-color: var(--color-bg);
@@ -42,7 +42,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: gorko.get-utility-value('font', 'normal');
+    font-weight: utilities.get-utility-value('font', 'normal');
     max-width: 30ch;
     font-size: 2.5em;
 }

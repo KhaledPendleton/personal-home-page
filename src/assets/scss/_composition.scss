@@ -1,13 +1,13 @@
 // COLORS
 $gorko-colors: (
-    'light': hsla(39, 27%, 79%, 0.99),
-    'teal': hsla(107, 6%, 54%, 0.99),
-    'cool': hsla(0, 0%, 34%, 0.99),
-    'cool-glare': hsla(334, 7%, 45%, 0.99),
-    'cool-shade': hsla(285, 10%, 8%, 0.99),
-    'warm': hsla(29, 31%, 50%, 0.99),
-    'warm-glare': hsla(46, 59%, 81%, 0.99),
-    'warm-shade': hsla(15, 38%, 48%, 0.99),
+    'light': hsla(39, 27%, 79%, 0.99), // njk includes
+    'teal': hsla(107, 6%, 54%, 0.99), // js exports
+    'cool': hsla(0, 0%, 34%, 0.99), // highlight
+    'cool-glare': hsla(334, 7%, 45%, 0.99), // text
+    'cool-shade': hsla(285, 10%, 8%, 0.99), // bg
+    'warm': hsla(29, 31%, 50%, 0.99), // js var names
+    'warm-glare': hsla(46, 59%, 81%, 0.99), // js params
+    'warm-shade': hsla(15, 38%, 48%, 0.99), // reserve words
 );
 
 $light-colors: (
