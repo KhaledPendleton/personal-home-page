@@ -1,0 +1,8 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+    {{ content | safe }}
+
+    {% set projectsList = collections.projects %}
+    {% include "partials/lists/project-previews-list.html" %}
+{% endblock %}
