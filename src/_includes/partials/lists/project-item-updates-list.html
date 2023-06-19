@@ -1,0 +1,14 @@
+<ol>
+    {% for update in projectUpdatesList %}
+        {# TODO: Make id creator function #}
+
+        <li id="{{ update.data.title | slugify }}">
+            <article>
+                <p>{{ update.data.date }}</p>
+                <p>{{ update.data.title }}</p>
+
+                {{ update.content | safe }}
+            </article>
+        </li>
+    {% endfor %}
+</ol>
