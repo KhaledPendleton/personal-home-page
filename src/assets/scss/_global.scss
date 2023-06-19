@@ -26,10 +26,6 @@ a {
         border-bottom-color: var(--color-link-hover);
     }
 
-    &:hover {
-        cursor: pointer;
-    }
-
     &:active {
         color: var(--color-link-active);
         border-bottom-color: var(--color-link-active);

@@ -33,6 +33,11 @@ body {
     font-family: system-ui, sans-serif;
 }
 
+a,
+button {
+    cursor: pointer;
+}
+
 a:not([class]) {
     text-decoration-skip-ink: auto;
 }
