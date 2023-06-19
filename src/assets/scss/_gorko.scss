@@ -25,6 +25,12 @@
                     'tokens': (
                         'color': tokens.$dark-colors
                     )
+                ),
+                'light-toggle': (
+                    'prefix': '[data-theme="light"]',
+                    'tokens': (
+                        'color': tokens.$light-colors
+                    )
                 )
             )
         ),
