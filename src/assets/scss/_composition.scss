@@ -41,3 +41,28 @@ $breakpoints: (
     'lg': '(min-width: 64rem)', // 1024px
     'xl': '(min-width: 75rem)'  // 1200px
 );
+
+// SIZING
+$_ratio: 1.618034;
+
+// SIZING - SPACING
+$_base-space: 1em;
+$_space-md: $_base-space * $_ratio;
+
+$spacing: (
+    'md': $_space-md
+);
+
+// SIZING - TEXT
+$_base-text: 1rem;
+
+$measures: (
+    'body': 70ch
+);
+
+$weights: (
+    'thin': '100',
+    'normal': '400',
+    'bold': '700',
+    'black': '900'
+);
