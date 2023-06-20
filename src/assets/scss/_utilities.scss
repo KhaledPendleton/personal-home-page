@@ -33,17 +33,28 @@
                         'color': composition.$light-colors
                     )
                 )
-            )
+            ),
+            'measure': composition.$measures,
+            'spacing': composition.$spacing
+        ),
+
+        // VARIABLE BASED CLASSES
+        'flow': (
+            'items': 'spacing',
+            'css-vars': true,
+            'output': 'standard',
+            'property': '--flow'
+        ),
+        'measure': (
+            'items': 'measure',
+            'css-vars': true,
+            'output': 'standard',
+            'property': '--measure'
         ),
 
         // TEXT
         'font-weight': (
-            'items': (
-                'thin': '100',
-                'normal': '400',
-                'bold': '700',
-                'black': '900'
-            ),
+            'items': composition.$weights,
             'output': 'standard',
             'property': 'font-weight'
         )
