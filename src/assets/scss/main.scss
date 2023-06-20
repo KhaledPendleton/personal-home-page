@@ -2,6 +2,9 @@
 @use 'utilities';
 @use 'global';
 
+// Utilities
+@use 'utilities/stack';
+
 // Blocks
 @use 'blocks/button';
 @use 'blocks/skip-link';

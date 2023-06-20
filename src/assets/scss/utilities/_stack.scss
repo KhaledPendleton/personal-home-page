@@ -1,0 +1,20 @@
+.stack {
+    // OVERRIDES
+    // --flow
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &:only-child {
+        block-size: 100%;
+    }
+
+    & > * {
+        margin-block: 0; // Remove extant vertical margins
+    }
+
+    & > * + * {
+        margin-block-start: var(--flow, 1.5rem); // TODO: Replace with composition space
+    }
+}
