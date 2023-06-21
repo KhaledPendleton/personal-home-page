@@ -2,20 +2,20 @@
 
 .theme-toggle {
     // OVERRIDES
-    // --transition-duration
-    --transition-duration: 200ms;
+    // --transition-hover-out-duration
+    // --transition-hover-in-duration
 
     width: 2rem; // TODO: Make adjustable by custom property
     border: none;
     padding: unset; // Prop applied to <button> with default padding
     cursor: pointer;
 
-    transition: var(--transition-duration) ease;
+    transition: var(--transition-hover-out-duration, 200ms) ease;
     background-color: var(--color-text);
 
     &:hover,
     &:focus {
-        --transition-duration: 100ms;
+        transition: var(--transition-hover-in-duration, 100ms);
         border-radius: 50%;
     }
 
