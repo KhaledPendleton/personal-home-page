@@ -1,33 +1,13 @@
 // Adapted from "modern reset" https://github.com/Andy-set-studio/modern-css-reset
 
-:root {
-    --measure: 70ch; // TODO: Move to compositions
-}
-
 *,
 *::before,
 *::after {
     box-sizing: border-box;
-    max-inline-size: var(--measure);
 }
 
 html:focus-within {
     scroll-behavior: smooth;
-}
-
-html,
-body,
-div,
-main,
-article,
-section,
-header,
-footer,
-main,
-nav,
-form,
-aside {
-    max-inline-size: none;
 }
 
 body,
