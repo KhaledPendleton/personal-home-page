@@ -1,15 +1,25 @@
 @use 'utilities/square';
 
 .theme-toggle {
+    // OVERRIDES
+    // --transition-duration
+    --transition-duration: 200ms;
+
     width: 2rem; // TODO: Make adjustable by custom property
     border: none;
     padding: unset; // Prop applied to <button> with default padding
     cursor: pointer;
 
+    transition: var(--transition-duration) ease;
     background-color: var(--color-text);
 
-    &:hover {
-        transform: scale(1.3);
-        transition: 200ms ease;
+    &:hover,
+    &:focus {
+        --transition-duration: 100ms;
+        border-radius: 50%;
+    }
+
+    &:active {
+        transform: scale(0.7);
     }
 }
