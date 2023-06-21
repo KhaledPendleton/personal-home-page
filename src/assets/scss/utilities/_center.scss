@@ -1,0 +1,17 @@
+.center {
+    // OVERRIDES
+    // --measure (default) hide content
+    // --gutter (default) Full bleed
+
+    margin-inline: auto;
+    box-sizing: content-box; // Remove padding from the width calculation
+    max-inline-size: var(--measure, 0px); 
+    padding-inline-start: var(--gutter, 0px);
+    padding-inline-end: var(--gutter, 0px);
+
+    &[data-intrinsic="true"] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
