@@ -57,6 +57,11 @@
             'items': composition.$weights,
             'output': 'standard',
             'property': 'font-weight'
+        ),
+        'text': (
+            'items': composition.$text,
+            'output': 'standard',
+            'property': 'font-size'
         )
     )
 );
