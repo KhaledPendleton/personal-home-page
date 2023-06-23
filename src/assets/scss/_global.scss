@@ -23,6 +23,9 @@ aside {
 body {
     background-color: var(--color-bg);
     color: var(--color-text);
+    line-height: 1.618034; // Should match composition.$_ratio
+
+    @include utilities.apply-utility('text', 'base');
 }
 
 ::selection {
