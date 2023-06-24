@@ -45,6 +45,12 @@
             'output': 'standard',
             'property': '--flow'
         ),
+        'gutter': (
+            'items': 'spacing',
+            'css-vars': true,
+            'output': 'standard',
+            'property': '--gutter'
+        ),
         'measure': (
             'items': 'measure',
             'css-vars': true,
