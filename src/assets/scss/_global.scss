@@ -62,8 +62,8 @@ h4,
 h5,
 h6 {
     @include utilities.apply-utility('measure', 'headings');
+    @include utilities.apply-utility('font-weight', 'normal');
 
-    font-weight: utilities.get-utility-value('font-weight', 'normal');
     font-size: 2.5em;
     max-inline-size: var(--measure);
 }
