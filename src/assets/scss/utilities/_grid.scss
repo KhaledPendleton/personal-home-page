@@ -1,0 +1,12 @@
+.grid {
+    // OVERRIDES
+    // --column-width (default) Available space
+    // --gutter
+
+    display: grid;
+    gap: var(--gutter, 0px);
+
+    @supports (width: min(var(--column-width), 100%)) {
+        grid-template-columns: repeat(auto-fit, minmax(min(var(--column-width, 100%), 100%), 1fr));
+    }
+}
