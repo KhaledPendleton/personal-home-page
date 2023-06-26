@@ -16,11 +16,11 @@
     &:hover,
     &:focus {
         transition: var(--transition-hover-in-duration, 100ms);
-        transform: scale(1.3);
+        transform: scale(1.618034); // Should match composition.$ratio
     }
 
     &:active {
-        transform: scale(0.7);
+        transform: scale(1);
         border-radius: 50%;
     }
 }
