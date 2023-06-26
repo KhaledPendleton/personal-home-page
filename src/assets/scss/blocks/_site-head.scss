@@ -1,0 +1,16 @@
+.site-head {
+    padding-block-start: var(--gutter);
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: var(--gutter);
+    }
+
+    a {
+        border-bottom: none; // Override global anchor styles
+        color: inherit;
+    }
+}
