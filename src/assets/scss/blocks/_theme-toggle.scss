@@ -13,6 +13,10 @@
     background-color: var(--color-text);
     width: var(--spacing-base);
 
+    &__icon {
+        @extend .square;
+    }
+
     &:hover,
     &:focus {
         transition: var(--transition-hover-in-duration, 100ms);
