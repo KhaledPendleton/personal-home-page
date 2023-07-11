@@ -1,0 +1,33 @@
+// TODO: Make sidebar side agnostic
+
+.control-panel {
+    // OVERRIDES
+    // --column-width (default) Available space
+    // --gutter
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter, 0px);
+
+    &[data-intrinsic="true"] {
+        // Let the sidebar’s content determine its width
+        .control-panel__sidebar {
+            flex-basis: unset;
+        }
+    }
+
+    &[data-stretch="false"] {
+        // Prevent sidebar from matching height of content
+        align-items: flex-start;
+    }
+
+    &__sidebar {
+        flex-basis: var(--column-width, 100%);
+        flex-grow: 1;
+    }
+
+    &__content {
+        flex-basis: 0;
+        flex-grow: 999;
+        min-inline-size: 50%;
+    }
+}
