@@ -1,21 +1,38 @@
 {% extends "layouts/base.html" %}
 
-{% set projectUpdatesMarkup %}
-    {% set projectUpdatesList = helpers.updatesForProject(collections['project-updates'], key) %}
+{% set projectUpdatesList = helpers.updatesForProject(collections['project-updates'], key) %}
 
-    {% if projectUpdatesList | length %}
-        {% include "partials/lists/project-item-updates-list.html" %}
-    {% else %}
-        <p>There are no updates at this time. Subscribe maybe</p>
-    {% endif %}
+{% set updatesListMarkup %}
+    {% include "partials/projects/updates-list.html" %}
+{% endset %}
+
+{% set updatesNameListMarkup %}
+    {% include "partials/projects/updates-names-list.html" %}
 {% endset %}
 
 {% block content %}
     <div class="center | measure-page">
         <div class="stack">
-            {{ content | safe }}
+            {# TODO: Fix font size #}
+            <h1>{{ title }}</h1>
 
-            {{ projectUpdatesMarkup | safe }}
+            <section>{{ content | safe }}</section>
+
+            <section>
+                {% if projectUpdatesList | length %}
+                    {# TODO: Move column width to stylesheet #}
+                    <div class="sidebar" style="--column-width: 20rem;">
+                        <section>
+                            {# TODO: Fix font size #}
+                            <h2>Updates</h2>
+                            {{ updatesNameListMarkup | safe }}
+                        </section>
+                        <section>{{ updatesListMarkup | safe }}</section>
+                    </div>
+                {% else %}
+                    <p>There are no updates at this time. Subscribe to recieve notifications</p>
+                {% endif %}
+            </section>
         </div>
     </div>
 {% endblock %}
