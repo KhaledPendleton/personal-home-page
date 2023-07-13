@@ -1,0 +1,40 @@
+<style>
+    /* TODO: Move to SCSS - Page specific styles */
+    #project-previews-list {
+        --column-width: 40ch;
+    }
+</style>
+
+{# TODO: Make dark-mode red and yellow more vibrant #}
+<ul id="project-previews-list" role="list" class="grid | max-inline-size-none p-inline-start-0">
+    {% for project in projectsList %}
+        {% set projectUpdatesListMarkup %}
+            {% set projectUpdatesList = helpers.updatesForProject(collections['project-updates'], project.data.key) %}
+
+            {% if projectUpdatesList | length %}
+                <ol class="p-inline-start-0" role="list">
+                    {% for update in projectUpdatesList %}
+                        <li><a href="{{ project.url }}#{{ update.data.title | slugify }}">{{ update.data.date }} {{ update.data.title }}</a></li>
+                    {% endfor %}
+                </ol>
+            {% endif %}
+        {% endset %}
+
+        <li>
+            <article class="stack">
+                <h3>
+                    {# TODO: Fix font size #}
+                    <a href="{{ project.url }}">{{ project.data.title }}</a>
+                </h3>
+
+                <section>
+                    <div class="stack">
+                        {# TODO: Decrease stack --flow #}
+                        {{ project.content | safe }}
+                    </div>
+                </section>
+                <section>{{ projectUpdatesListMarkup | safe }}</section>
+            </article>
+        </li>
+    {% endfor %}
+</ul>
