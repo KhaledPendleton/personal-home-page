@@ -1,0 +1,7 @@
+<ol role="list" class="p-inline-start-0">
+    {% for project in projectsList %}
+        <li>
+            <a href="{{ project.url }}">{{ project.data.title }}</a>
+        </li>
+    {% endfor %}
+</ol>
