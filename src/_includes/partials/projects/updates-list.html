@@ -1,7 +1,7 @@
-<ol>
+<ol class="p-inline-start-0" role="list">
     {% for update in projectUpdatesList %}
-        {# TODO: Make id creator function #}
 
+        {# TODO: Make id creator function #}
         <li id="{{ update.data.title | slugify }}">
             <article>
                 <p>{{ update.data.date }}</p>
