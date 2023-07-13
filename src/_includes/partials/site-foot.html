@@ -1,0 +1,11 @@
+{% set yearMarkup %}
+    {% set year = helpers.currentYear() %}
+    <time datetime="{{ year }}">{{ year }}</time>
+{% endset %}
+
+{# TODO: Use JS to update year dynamically #}
+<footer role="contentinfo">
+    <div class="center | measure-page">
+        <p>&copy; {{ yearMarkup | safe }} {{ site.name }}</p>
+    </div>
+</footer>
