@@ -1,0 +1,40 @@
+// VARIATIONS
+// intrinsic (true|FALSE) Let the sidebar’s content determine its width
+// stretch (TRUE|false) Prevent sidebar from matching height of content
+// ltr (TRUE|false) Sidebar appears on the left-hand side
+//
+// OVERRIDES
+// --column-width (default: Available space)
+// --gutter
+
+.sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter, 0px);
+
+    & > :first-child {
+        flex-basis: var(--column-width, 100%);
+        flex-grow: 1;
+    }
+
+    & > :last-child {
+        flex-basis: 0;
+        flex-grow: 999;
+        min-inline-size: 50%;
+    }
+
+    // VARIATIONS
+    &[data-intrinsic="true"] {
+        .control-panel__sidebar {
+            flex-basis: unset;
+        }
+    }
+
+    &[data-stretch="false"] {
+        align-items: flex-start;
+    }
+
+    &[data-ltr="false"] {
+        flex-direction: row-reverse;
+    }
+}
