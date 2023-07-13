@@ -8,18 +8,6 @@
 {# TODO: Make dark-mode red and yellow more vibrant #}
 <ul id="project-previews-list" role="list" class="grid | max-inline-size-none p-inline-start-0">
     {% for project in projectsList %}
-        {% set projectUpdatesListMarkup %}
-            {% set projectUpdatesList = helpers.updatesForProject(collections['project-updates'], project.data.key) %}
-
-            {% if projectUpdatesList | length %}
-                <ol class="p-inline-start-0" role="list">
-                    {% for update in projectUpdatesList %}
-                        <li><a href="{{ project.url }}#{{ update.data.title | slugify }}">{{ update.data.date }} {{ update.data.title }}</a></li>
-                    {% endfor %}
-                </ol>
-            {% endif %}
-        {% endset %}
-
         <li>
             <article class="stack">
                 <h3>
@@ -33,7 +21,12 @@
                         {{ project.content | safe }}
                     </div>
                 </section>
-                <section>{{ projectUpdatesListMarkup | safe }}</section>
+                <section>
+                    {% set projectUpdatesList = helpers.updatesForProject(collections['project-updates'], project.data.key) %}
+                    {% if projectUpdatesList | length %}
+                        {% include "partials/projects/preview-updates-list.html" %}
+                    {% endif %}
+                </section>
             </article>
         </li>
     {% endfor %}
