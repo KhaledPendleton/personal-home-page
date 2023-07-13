@@ -1,0 +1,5 @@
+<ol class="p-inline-start-0" role="list">
+    {% for update in projectUpdatesList %}
+        <li><a href="{{ project.url }}#{{ update.data.title | slugify }}">{{ update.data.date }} {{ update.data.title }}</a></li>
+    {% endfor %}
+</ol>
