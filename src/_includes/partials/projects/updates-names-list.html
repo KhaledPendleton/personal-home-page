@@ -1,0 +1,9 @@
+<ol class="p-inline-start-0" role="list">
+    {% for update in projectUpdatesList %}
+
+        {# TODO: Make id creator function #}
+        <li>
+            <a href="{{ project.url }}#{{ update.data.title | slugify }}">{{ update.data.title }}</a>
+        </li>
+    {% endfor %}
+</ol>
