@@ -11,7 +11,11 @@
 {% endset %}
 
 {% block content %}
-    {{ content | safe }}
+    <div class="center | measure-page">
+        <div class="stack">
+            {{ content | safe }}
 
-    {{ projectUpdatesMarkup | safe }}
+            {{ projectUpdatesMarkup | safe }}
+        </div>
+    </div>
 {% endblock %}
