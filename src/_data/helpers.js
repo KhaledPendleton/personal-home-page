@@ -7,5 +7,9 @@ module.exports = {
      */
     updatesForProject(updates, projectKey) {
         return updates.filter(u => projectKey === u.data.project);
+    },
+    currentYear() {
+        const today = new Date();
+        return today.getFullYear();
     }
 }
