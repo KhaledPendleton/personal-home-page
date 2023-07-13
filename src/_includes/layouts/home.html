@@ -1,8 +1,32 @@
 {% extends "layouts/base.html" %}
 
-{% block content %}
-    {{ content | safe }}
+{% set projectsList = collections.projects %}
 
-    {% set projectsList = collections.projects %}
-    {% include "partials/lists/project-previews-list.html" %}
+{% set namesListMarkup %}
+    {% include "partials/projects/names-list.html" %}
+{% endset %}
+
+{% set previewsListMarkup %}
+    {% include "partials/projects/previews-list.html" %}
+{% endset %}
+
+{% block content %}
+    <div class="center | measure-page">
+        <div class="stack">
+            <section>{{ content | safe }}</section>
+
+            {# TODO: Move column width to stylesheet #}
+            <section class="sidebar" style="--column-width: 20rem;">
+                <section>
+                    <div class="stack">
+                        {# TODO: Fix font size #}
+                        <h2>Projects</h2>
+                        {{ namesListMarkup | safe }}
+                    </div>
+                </section>
+
+                <section>{{ previewsListMarkup | safe }}</section>
+            </section>
+        </div>
+    </div>
 {% endblock %}
